@@ -1,0 +1,9 @@
+/target
+
+scripts/
+
+models/
+
+data/archive
+
+*.log
