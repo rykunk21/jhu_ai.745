@@ -25,8 +25,8 @@ This project rests on two core supporting reasoning frameworks / modeling archit
 - GLiNER
   Generalizable lightweight named entity recognition. This is how we are going to build structure from our unstructed natural langauge requirements. We are going to design a schema that will allow the NER pipeline to establish the triplets will use for training later
 
-- rotatE
-  rotatE is a knowledge graph embedding algorithm that will establish asymetric relationships by embedding the entities as complex valued vectors. We use the results from GLiNER and run them through the rotate algorithm, which embeds the entities in the complex plane, and encodes the relationships as a complex exponential that will rotate the entity in the complex plane (hence the name rotatE). The algorithm uses a self supervised constrastive learning approach which is said to have "learned" the triplet set if the embeddings are placed in the complex plane, such that applying the relationship vector to an entity rotates that vector the entity it relates to.
+- rotatE  
+  rotatE is a knowledge graph embedding algorithm that will establish asymetric relationships by embedding the entities as complex valued vectors. We use the results from GLiNER and run them through the rotate algorithm, which embeds the entities in the complex plane, and encodes the relationships as a complex exponential that will rotate the entity in the complex plane (hence the name rotatE). The algorithm uses a self supervised constrastive learning approach which is said to have "learned" the triplet set if the embeddings are placed in the complex plane, such that applying the relationship vector to an entity rotates that vector on top of the entity it relates to.
 
 ## How to produce the results for yourself
 
