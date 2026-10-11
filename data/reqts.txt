@@ -1,0 +1,50 @@
+If the system is activated in a convoy defense role, then it shall detect, track, classify, and engage airborne sUAS threats within a 360-degree azimuth coverage.
+If an airborne object enters the monitored airspace, then the system shall process it if it falls within Group 1, Group 2, or Group 3 sUAS classifications per DoD UAS taxonomy.
+If the system generates an engagement recommendation, then it shall require operator confirmation before executing the engagement, except as specified in the Automatic Engagement requirement.
+If the host vehicle is in motion across varied terrain, then the system shall maintain full detection, tracking, and engagement capability.
+If the system is operating in rain, snow, fog, dust, or extreme temperatures within specified limits, then it shall maintain its detection, classification, and engagement functions.
+If objects are present in the engagement envelope, then the system shall automatically detect them using multi-spectral sensors and produce a detection event.
+If an object is detected, then the system shall classify it as sUAS threat, friendly force, commercial traffic, or non-threat, and produce a confidence metric.
+If an object is classified as a sUAS threat, then the system shall assess threat level based on trajectory, speed, heading, and proximity to protected assets, and produce a threat level assignment (1-5).
+If a threat level assignment is produced, then the system shall generate an engagement recommendation and transition to a state awaiting operator confirmation.
+If an engagement is authorized, then the system shall deliver lethality proportional to the assessed threat level, from sensor dazzle through full kinetic destruction.
+If weather conditions degrade sensor or propagation performance, then the system shall automatically adjust sensor parameters and engagement algorithms to maintain effectiveness.
+If networked with other convoy defense systems, then the system shall exchange track data and engagement status for coordinated defense.
+If a Group 1 sUAS is within 3 km, a Group 2 sUAS within 5 km, or a Group 3 sUAS within 8 km, then the DTS shall detect it with probability of detection (Pd) ≥ 0.95.
+If precipitation rate is ≤ 25 mm/hr and visibility is ≥ 100 m, then the DTS shall maintain Pd ≥ 0.90.
+If an object is detected and tracked, then the DTS shall maintain position accuracy ≤ 1 m RMS in all three axes.
+If the DTS is monitoring airspace, then it shall generate false alarms at a rate ≤ 1 per hour per 1 km² of monitored volume.
+If an object is classified as sUAS, then the TAS shall assess hostile intent based on flight path convergence with protected assets and anomalous behavior patterns.
+If classification and intent assessment are complete, then the TAS shall assign a threat level (1-5), where Level 5 indicates imminent attack.
+If a threat level is assigned, then the TAS shall recommend a proportional response type: dazzle, disable, or destroy.
+If an operator issues an override command, then the ECS shall halt any active engagement sequence within 500 ms.
+If a Level 5 threat is detected within 100 m of protected assets, then the ECS may execute engagement without operator confirmation after a 3-second alert period.
+If a threat level assignment is produced, then the ECS shall present the engagement recommendation to the operator within 2 seconds.
+If an engagement is authorized, then the ECS shall sequence through: STANDBY → ACQUIRING → ENGAGING → ENGAGED, and log each transition with operator ID and timestamp.
+If the DES is commanded to engage, then it shall deliver power output adjustable from 1 kW (dazzle) through 50 kW (destruction) with continuous modulation.
+If the DES is emitting, then it shall maintain beam quality factor M² ≤ 1.5 at all power levels.
+If the DES is tracking a target, then it shall achieve and maintain pointing accuracy ≤ 50 μrad.
+If atmospheric conditions degrade beam propagation, then the DES shall apply adaptive optics and atmospheric compensation to maintain energy on target.
+If the DES is commanded to emit above dazzle threshold, then it shall compute the Nominal Ocular Hazard Distance (NOHD) and inhibit emission if the zone intersects friendly force positions.
+If the system is networked, then the C2I shall communicate using VMF.
+If multiple convoy defense systems are networked, then the C2I shall provide and receive composite air picture updates within 2 seconds.
+If the radar is active, then it shall operate in Ku-band (15.7-17.7 GHz) with transmit power ≥ 2 W and resolve targets with radial velocity ≥ 0.5 m/s.
+If the EO/IR sensor is active, then it shall provide visible imagery at ≥ 1920×1080 resolution at 30 fps, and detect 300K targets against 260K background at ≥ 5 km.
+If multiple sensors produce tracks on the same object, then the sensor fusion module shall produce a single fused track with update rate ≥ 10 Hz and maintain track identity across sensor handoffs within 100 ms.
+If sensor data is available, then the classification module shall compute aspect ratio, rotor rate, and thermal signature, and produce a classification decision within 50 ms.
+If track data is available, then the TAS shall extrapolate the 3D path using a constant acceleration model and flag convergence when predicted closest point of approach ≤ 200 m.
+If threat scoring is triggered, then the TAS shall compute a score weighted as: proximity (40%), velocity (25%), payload estimate (20%), trajectory (15%), and escalate threat level only if the score exceeds threshold for ≥ 2 seconds.
+If threat level is assigned, then the response module shall map: Level 1-2 → dazzle, Level 3-4 → disable, Level 5 → destroy, and default to dazzle if classification confidence < 0.70.
+If the system is active, then the operator interface shall display a 360-degree PPI with threat icons, tracks, and recommended actions, and support gloved operation.
+If a Level 4 or Level 5 threat is detected, then the operator interface shall provide haptic feedback within 200 ms.
+If the safety interlock module is active, then it shall verify NOHD clear, friendly force positions outside hazard zone, and operator override not active, before permitting laser emission.
+If the safety interlock is operational, then it shall run diagnostic tests every 100 ms with fault detection coverage ≥ 99%.
+If the laser source is commanded on, then it shall emit at 1070 nm with wall-plug efficiency ≥ 35%, and the power supply shall deliver 0-50 kW with slew rate ≥ 10 kW/s.
+If the beam formation module is active, then it shall produce TEM₀₀ mode with M² ≤ 1.5 and maintain circular polarization.
+If a target track is provided, then the gimbal shall position the beam to azimuth ±180° and elevation -10° to +90°, and the fine steering mirror shall provide ±2 mrad correction with bandwidth ≥ 1 kHz.
+If atmospheric turbulence is detected, then the wavefront sensor shall sample at ≥ 2 kHz and the deformable mirror shall correct up to 10 modes with settling time ≤ 1 ms.
+If the system transmits convoy coordination data, then the communications module shall format VMF K-series messages per MIL-STD-6017 and support ≥ 4 concurrent Link-16 networks.
+If the system is tracking multiple objects, then the track database shall maintain ≥ 500 simultaneous air tracks with 30-day history and fuse reports from ≥ 4 adjacent systems within 2 seconds.
+If multiple convoy defense systems are engaging, then the C2I shall compute fire zones and prevent overlapping engagements.
+If the system is networked, then the TAS shall communicate using VMF.
+if the system is networked, then the TAS shall communicate using the radar.

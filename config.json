@@ -1,0 +1,47 @@
+{
+  "schema": {
+    "entities": [
+      "subsystem or module",
+      "human operator",
+      "data product",
+      "system state",
+      "threat level",
+      "response level",
+      "safety constraint",
+      "object class",
+      "environmental condition",
+      "metric",
+      "external interface"
+    ],
+    "relations": [
+      "produces",
+      "reports_to",
+      "requires",
+      "halts",
+      "inhibits",
+      "maps_to",
+      "transitions_to",
+      "communicates_via",
+      "constrained_by"
+    ]
+  },
+  "model_path": "models/gliner2.5-base",
+  "training": {
+    "script_path": "KnowledgeGraphEmbedding/codes/run.py",
+    "model_type": "RotatE",
+    "negative_sample_size": 16,
+    "batch_size": 10,
+    "hidden_dim": 32,
+    "gamma": 8.0,
+    "alpha": 1.0,
+    "learning_rate": 0.01,
+    "max_steps": 2000,
+    "regularization": 0.001,
+    "save_path": "models/req_kg",
+    "test_batch_size": 2
+  },
+  "defaults": {
+    "input": "data/reqts.txt",
+    "out": "data/req_kg"
+  }
+}
