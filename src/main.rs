@@ -1,3 +1,4 @@
+mod baseline;
 mod cli;
 mod config;
 mod query;
@@ -12,6 +13,12 @@ fn main() -> Result<()> {
     // parse the cli and config
     let cli = cli::Cli::parse();
     let cfg = config::load(&cli.config);
+
+    // If i pass a baseline query, run that and exit early
+    if let Some(b) = &cli.baseline {
+        baseline::run(b, cli.baseline_top)?;
+        return Ok(());
+    }
 
     // If i pass a query, run that and exit early
     if let Some(q) = &cli.query {

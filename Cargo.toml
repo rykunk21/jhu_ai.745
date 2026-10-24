@@ -6,6 +6,9 @@ edition = "2024"
 [dependencies]
 anyhow = "1.0.104"
 candle-core = { version = "0.11.0" }
+candle-nn = { version = "0.11.0" }
+candle-transformers = { version = "0.11.0" }
+tokenizers = { version = "0.21", features = ["hf-hub"] }
 clap = { version = "4", features = ["derive"] }
 gliner-rs = { path = "/home/admin/repos/gliner-rs" }
 serde = { version = "1", features = ["derive"] }
@@ -13,3 +16,4 @@ serde_json = "1"
 ndarray = "0.17"
 ndarray-npy = "0.10"
 rand = "0.8"
+hf-hub = { version = "0.4", default-features = false, features = ["tokio"] }

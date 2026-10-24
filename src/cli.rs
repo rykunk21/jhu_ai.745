@@ -18,6 +18,9 @@ pub struct Cli {
     pub train: bool,
 
     #[arg(long)]
+    pub baseline: Option<String>,
+
+    #[arg(long)]
     pub query: Option<String>,
 
     #[arg(long)]
@@ -31,4 +34,7 @@ pub struct Cli {
 
     #[arg(long, default_value_t = 10)]
     pub top: usize,
+
+    #[arg(long, default_value_t = 10)]
+    pub baseline_top: usize,
 }
