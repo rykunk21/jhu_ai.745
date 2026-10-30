@@ -137,8 +137,11 @@ impl BaselineModel {
 
 /// Standalone helper: just run a single query and print the top-k
 /// continuations.
-pub fn run(query: &str, k: usize) -> Result<()> {
-    let cfg = BaselineConfig::default();
+pub fn run(query: &str, k: usize, device: Option<String>) -> Result<()> {
+    let mut cfg = BaselineConfig::default();
+    if let Some(d) = device {
+        cfg.device = Some(d);
+    }
     let mut model = BaselineModel::load(&cfg)?;
     let top = model.top_k(query, k)?;
 

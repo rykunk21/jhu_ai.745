@@ -16,7 +16,7 @@ fn main() -> Result<()> {
 
     // If i pass a baseline query, run that and exit early
     if let Some(b) = &cli.baseline {
-        baseline::run(b, cli.baseline_top)?;
+        baseline::run(b, cli.baseline_top, cli.device.clone())?;
         return Ok(());
     }
 
